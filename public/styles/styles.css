@@ -45,5 +45,10 @@ body, html {
 
 /* INDEX PAGE  */
 
+.nav-item { 
+  font-size: 28px;
+  padding-right: 40px;
+  padding-left: 40px;
+}
 
 /* END OF INDEX PAGE */
