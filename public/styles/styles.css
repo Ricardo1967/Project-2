@@ -1,3 +1,19 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+body, html { 
+  height: 100%; 
+  background-repeat: no-repeat;
+  background-image: url("https://webgradients.com/public/webgradients_png/070%20Aqua%20Splash.png");
+}
+
+.card-container .card { 
+  max-width: 350px;
+  padding: 40px 40px;
+}
+
+.btn { 
+  font-weight: 700;
+  height: 36px;
+}
