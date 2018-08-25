@@ -1,6 +1,5 @@
 /* LOGIN PAGE */
 body, html { 
-  height: 100%; 
   background-repeat: no-repeat;
   background-image: url("https://webgradients.com/public/webgradients_png/070%20Aqua%20Splash.png");
   background-position: top;
@@ -14,7 +13,7 @@ body, html {
 .card { 
   max-width: 370px;
   background-color: white; 
-  padding: 60px 25px 100px;
+  padding: 60px 25px 70px;
   margin-top: 110px;
   border-radius: 2px;
 }
