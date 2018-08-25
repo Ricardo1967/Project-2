@@ -2,7 +2,11 @@ require("dotenv").config();
 var express = require("express");
 var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
+<<<<<<< HEAD
 const movieDB = require("moviedb")('aa0f636f0795b94933b7d8c1b188b57e');
+=======
+var movieDB = require('moviedb')('aa0f636f0795b94933b7d8c1b188b57e');
+>>>>>>> html
 
 var db = require("./models");
 
