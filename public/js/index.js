@@ -5,22 +5,14 @@
 // var $exampleList = $("#example-list");
 
 
-var API = {
-  showMovie: function(response) { 
-    return $.ajax({
-      type: "GET",
-      dataType: "json",
-      url: "/"
-      }).then(function(response) { 
-        console.log(response);
-        console.log("response");
-    }); 
+var $searchResult = $("#searchResult"); 
+
+var API = { 
+  searchResult = function(example) { 
+    
   }
-};
-
+}
    
-
-
 // // The API object contains methods for each kind of request we'll make
 // var API = {
 //   saveExample: function(example) {
