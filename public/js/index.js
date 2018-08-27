@@ -4,14 +4,21 @@
 // var $submitBtn = $("#submit");
 // var $exampleList = $("#example-list");
 
-function searchResultData() { 
-  $.ajax({
-    type: "GET",
-    url: "http://localhost:3000/"
-    }).then(function(response) { 
-      console.log(response);
-  });  
+
+var API = {
+  showMovie: function(response) { 
+    return $.ajax({
+      type: "GET",
+      dataType: "json",
+      url: "/"
+      }).then(function(response) { 
+        console.log(response);
+        console.log("response");
+    }); 
+  }
 };
+
+   
 
 
 // // The API object contains methods for each kind of request we'll make
@@ -41,15 +48,6 @@ function searchResultData() {
 // };
 
 // refreshExamples gets new examples from the db and repopulates the list
-
-var searchResult = function() { 
-  API.movieSearchResults().then(function(data) {
-    var body = data.map(function(body) {
-      $("#searchResult").html("<p>" + body + "</p>");
-    })
-  })
-}
-
 
 // var refreshExamples = function() {
 //   API.getExamples().then(function(data) {
