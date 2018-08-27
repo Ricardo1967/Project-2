@@ -1,18 +1,28 @@
-// Get references to page elements
+
+var $searchResult = $("#searchResult"); 
+
+var API = { 
+  searchResult = function(results) {
+    return $.ajax({
+      headers: {
+        "Content-Type": "application/json"
+      }, 
+      type: "POST",
+      url: "/", 
+      data: JSON.stringify(results)
+    });
+  }
+};
+
+
+//-------GIVEN STARTED TEMPLATE! ----// 
+  // Get references to page elements
 // var $exampleText = $("#example-text");
 // var $exampleDescription = $("#example-description");
 // var $submitBtn = $("#submit");
 // var $exampleList = $("#example-list");
 
-
-var $searchResult = $("#searchResult"); 
-
-var API = { 
-  searchResult = function(example) { 
-    
-  }
-}
-   
+ 
 // // The API object contains methods for each kind of request we'll make
 // var API = {
 //   saveExample: function(example) {
