@@ -12,7 +12,7 @@ var options = { method: 'GET',
 
 module.exports = function(app) {
 
-  app.get("/", function(req,res) { 
+  app.get("/api/results", function(req,res) { 
       request(options, function (error, response, body) {
         if (error) throw new Error(error);
     

@@ -1,24 +1,18 @@
+function postResult() { 
+  $.ajax({
+    type:"POST", 
+    url:"/api/results",
+    data: JSON.stringify(data), 
+    success: function(data) { 
+      alert("Success")
+    }
+  });
+}//postItem() 
 
-var $searchResult = $("#searchResult"); 
+$("#searchResult").on('click', function() { 
+  postResult();
+});
 
-// var API = { 
-//   searchResult = function(results) {
-//     return $.ajax({
-//       headers: {
-//         "Content-Type": "application/json"
-//       }, 
-//       type: "POST",
-//       url: "/", 
-//       data: JSON.stringify(results)
-//     });
-//   }
-// };
-
-// var getResults = function() { 
-//   API.searchResult().then(function(data) { 
-//     $("#searchResults").text(data);
-//   })
-// };
 
 
 //-------GIVEN STARTED TEMPLATE! ----// 
