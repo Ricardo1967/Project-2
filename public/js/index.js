@@ -1,18 +1,24 @@
 
 var $searchResult = $("#searchResult"); 
 
-var API = { 
-  searchResult = function(results) {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      }, 
-      type: "POST",
-      url: "/", 
-      data: JSON.stringify(results)
-    });
-  }
-};
+// var API = { 
+//   searchResult = function(results) {
+//     return $.ajax({
+//       headers: {
+//         "Content-Type": "application/json"
+//       }, 
+//       type: "POST",
+//       url: "/", 
+//       data: JSON.stringify(results)
+//     });
+//   }
+// };
+
+// var getResults = function() { 
+//   API.searchResult().then(function(data) { 
+//     $("#searchResults").text(data);
+//   })
+// };
 
 
 //-------GIVEN STARTED TEMPLATE! ----// 
