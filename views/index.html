@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+  	<script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <title>Home Page</title>
+  </head>
+
+  <body>
+      <nav class="navbar navbar-light bg-light justify-content-between flex-nowrap flex-row">
+        <a href="/" class="navbar-brand">Watch Index</a>
+        <ul class="nav navbar-nav flex-row">
+            <li class="nav-item"><a class="nav-link pr-3" href=""><i class="fas fa-search fa-lg" id="navIcon" id="searchIcon"></i></a></li>
+            <li class="nav-item"><a class="nav-link" href=""><i class="fas fa-indent fa-lg" id="navIcon"></i></a></li>
+        </ul>
+      </nav>
+
+  <div class="container-fluid overlay" id="myOverlay">
+      <div class="row">
+          <div class="col-12 mx-auto">
+              <button type="button" id="closeButton" class="closebtn close" aria-label="Close" title="Close Overlay">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+              <div class="overlayContent">
+                  <form class="form-inline ">
+                      <input type="text" placeholder="Search..." name="search">
+                      <button type="button submit" class="btn btn-outline-dark" id="searchEnter">ENTER</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <script src="/public/js/index.js"></script>
+  </body>
+
+</html>
