@@ -1,3 +1,5 @@
+$(document).ready(fucn)
+
 function postResult() { 
   $.ajax({
     type:"POST", 
@@ -10,9 +12,9 @@ function postResult() {
 }//postItem() 
 
 $("#searchResult").on('click', function() { 
+  console.log("Hey");
   postResult();
 });
-
 
 
 //-------GIVEN STARTED TEMPLATE! ----// 
