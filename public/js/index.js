@@ -1,4 +1,4 @@
-$(document).ready(function() { 
+$(document).ready(function () {
   console.log("working")
   function postResult() {
     $.ajax({
@@ -7,14 +7,36 @@ $(document).ready(function() {
       contentType: "application/json",
       success: function (data) {
 
+        //data = data.body;
 
-        data = JSON.stringify(data)
+        //var contentTitle = data.body.title;
+
+        //title = JSON.stringify(data.body.title);
         alert("Success");
-
         console.log("results out");
-        $("#searchResult").text(data);
-
+        console.log(data);
+        $("#searchResult").text(data.title);
+        //$("#movieTitle").text(contentTitle);
       }
     });
-  }
+  };
+
+  $("#searchForMovie").on('click', function () {
+    event.preventDefault();
+    console.log('inside click');
+    var searchInput = $("#searchContent").val();
+    console.log(searchInput);
+    $.ajax({
+      type: "GET",
+      url: "/api/movie/"+searchInput,
+      contentType: "application/json",
+      success: function (data) {
+      }
+    });
+
+  })
+
+
+  // postResult();
+
 });
