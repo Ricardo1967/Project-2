@@ -12,5 +12,3 @@ function postResult() {
 $("#searchResult").on('click', function() { 
   postResult();
 });
-
-
