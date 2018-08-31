@@ -4,11 +4,13 @@ function postResult() {
     url:"/api/results",
     data: JSON.stringify(data), 
     success: function(data) { 
-      alert("Success")
+      alert("Success");
+      renderFunction(); 
     }
   });
 }//postItem() 
 
-$("#searchResult").on('click', function() { 
-  postResult();
-});
+function renderFunction() { 
+  console.log("results out");
+  $("#searchResult").text(data);
+};
