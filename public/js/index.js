@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // INDEX --> Searchbar Overlay CSS ---//
 $(function() {  
   $("#searchIcon").on('click', function() { 
@@ -151,3 +152,21 @@ $(function() {
 // //     $("signUpForm").hide();
 // //     return false;
 // // });
+=======
+function postResult() { 
+  $.ajax({
+    type:"POST", 
+    url:"/api/results",
+    data: JSON.stringify(data), 
+    success: function(data) { 
+      alert("Success")
+    }
+  });
+}//postItem() 
+
+$("#searchResult").on('click', function() { 
+  postResult();
+});
+
+
+>>>>>>> 958404735ddcef1e0eb6903d6a274d5d59665857
