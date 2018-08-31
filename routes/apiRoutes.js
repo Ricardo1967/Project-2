@@ -17,6 +17,7 @@ module.exports = function(app) {
         if (error) throw new Error(error);
     
         console.log("getting data");
+        console.log(response);
         res.json(response);
       });
   })

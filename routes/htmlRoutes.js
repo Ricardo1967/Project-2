@@ -2,10 +2,9 @@ module.exports = function(app) {
 
   // Load index page
   app.get("/", function(req, res) {
-      res.send("index", {
+      res.render("index", {
       });
   });
- 
 
   // Load login page
   app.get("/login", function(req, res) {
