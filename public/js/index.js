@@ -17,19 +17,19 @@ $(document).ready(function () {
         var featuredContainer = $("#featuredContainer");
 
         var cardDeckDiv = $("<div class='card-deck'>");
-        var resultDiv = $("<div class='card mx-auto' style='width:15rem'>");
-
-        var resultBody = $("<div class='card-body'>");
-        var titleDiv = $("<h3 class='card-title text-center'</h3>").text(title);
+        var resultDiv = $("<div class='card mx-auto' style='width:175px'>");
 
         var resultImage = $("<img class='card-img-top'>");
           resultImage.attr("src", image);
+
+        var resultBody = $("<div class='card-body'>");
+        var titleDiv = $("<h3 class='card-title text-center'</h3>").text(title);
 
         var ratingDiv = $("<p class='card-text text-center'</p>").text(rating);
         var addButton = $("<button id='addButton' type='button' class='btn btn-secondary btn-lg btn-block'>Add to List</button>");
 
         cardDeckDiv.append(resultDiv);
-        resultDiv.append(resultBody, titleDiv, resultImage,  ratingDiv, addButton)
+        resultDiv.append(resultBody, resultImage, titleDiv, ratingDiv, addButton)
         featuredContainer.prepend(resultDiv);
       }
     }
@@ -58,7 +58,7 @@ $(document).ready(function () {
             var divContainer = $("#resultsContainer");
 
 
-            var resultDiv = $("<div class='card mx-auto' style='width:30rem'>");
+            var resultDiv = $("<div class='card mx-auto' style='width:175px'>");
 
             var resultBody = $("<div class='card-body'>");
             var resultImage = $("<img class='card-img-top'>");
