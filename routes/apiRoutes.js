@@ -1,24 +1,65 @@
 var request = require("request");
+
 //the movie database API key info - test using movie avengers search ALL (movie and tv)
-var options = { method: 'GET',
+
+module.exports = function (app) {
+
+  //get results to user Search
+  app.get("/api/movie/:title", function (req, res) {
+    console.log('in movie');
+    var movieTitle = req.params.title;
+    var options = {
+      method: 'GET',
       url: 'https://api.themoviedb.org/3/search/multi',
-      qs: 
-      { include_adult: 'false',
-        page: '1',
-        query: 'avengers',
-        language: 'en-US',
-        api_key: 'aa0f636f0795b94933b7d8c1b188b57e' },
-      body: '{}' };
+      qs:
+        {
+          include_adult: 'false',
+          page: '1',
+          query: movieTitle,
+          language: 'en-US',
+          api_key: 'aa0f636f0795b94933b7d8c1b188b57e'
+        },
+      body: '{}'
+    };
 
-module.exports = function(app) {
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
 
-  app.get("/api/results", function(req,res) { 
-      request(options, function (error, response, body) {
-        if (error) throw new Error(error);
-    
-        console.log("getting data");
-        res.json(response);
-      });
-  })
+      console.log("getting data");
+      response = JSON.parse(response.body);
+      var result = response.results;
+
+        // var responseObj = {
+        //   //title: result.title,
+        //   rating: result.vote_average,
+        //   image: "https://image.tmdb.org/t/p/w500" + result.poster_path
+        // }
+      //console.log(responseObj);
+      console.log(response);
+      res.json(response);
+    });
+  });
+  //END of user Search 
+
+  //'featured' section 
+  app.get("/api/featured", function (req, res) {
+    var options = {
+      method: 'GET',
+      url: 'https://api.themoviedb.org/3/trending/all/day',
+      qs:
+        { api_key: 'aa0f636f0795b94933b7d8c1b188b57e' },
+      body: '{}'
+    };
+
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
+      console.log("getting data");
+      response = JSON.parse(response.body);
+      var result = response.results;
+      console.log(response);
+      res.json(response);
+    });
+  });
+  //END of featured section
+
 };
-

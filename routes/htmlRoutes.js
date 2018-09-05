@@ -5,7 +5,6 @@ module.exports = function(app) {
       res.render("index", {
       });
   });
- 
 
   // Load login page
   app.get("/login", function(req, res) {
