@@ -332,12 +332,12 @@ img::-moz-selection {
 #mainNav .navbar-nav > li.nav-item > a.nav-link.active,
 #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active {
   color: #e50914 !important;
-  background-color: transparent;
+  background-color: black;
 }
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover,
 #mainNav .navbar-nav > li.nav-item > a.nav-link:focus.active:hover {
-  background-color: transparent;
+  background-color: black;
   color: silver;
 }
 
@@ -384,7 +384,7 @@ img::-moz-selection {
 }
 
 header.masthead {
-  padding-top: 2rem;
+  padding-top: 10rem;
   background-color: black;
   margin-bottom: 0px;
   background-image: url("/public/images/hero-bg-Small.png");
