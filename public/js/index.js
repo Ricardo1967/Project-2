@@ -19,13 +19,13 @@ $(document).ready(function () {
         var cardDeckDiv = $("<div class='card-deck'>");
         var resultDiv = $("<div class='card mx-auto' style='width:175px'>");
 
-        var resultImage = $("<img class='card-img-top'>");
+        var resultImage = $("<img class='image card-img-top'>");
           resultImage.attr("src", image);
 
         var resultBody = $("<div class='card-body'>");
-        var titleDiv = $("<h3 class='card-title text-center'</h3>").text(title);
+        var titleDiv = $("<h3 class='title card-title text-center'</h3>").text(title);
 
-        var ratingDiv = $("<p class='card-text text-center'</p>").text(rating);
+        var ratingDiv = $("<p class='rating card-text text-center'</p>").text(rating);
         var addButton = $("<button id='addButton' type='button' class='btn btn-secondary btn-lg btn-block'>Add to List</button>");
 
         cardDeckDiv.append(resultDiv);
@@ -38,22 +38,22 @@ $(document).ready(function () {
  
 
   //addButton push to DB
-  $("#addButton").on('click', function(){
+  $(document).on("click", "#addButton", function(){
     console.log("Hello");
-    var $userSelectedTitle = $(this).find('.card').find('card-title').val();
-    var $userSelectedRating = $(this).find('.card').find('card-text').val();
-    var $userSelectedImage = $(this).find('.card').find('card-img-top').val();
+    var $userSelectedTitle = $(this).parent('.card').find('.title').text();
+    var $userSelectedRating = $(this).parent('.card').find('.rating').text();
+    var $userSelectedImage = $(this).parent('.card').find('image').text();
     
     
       event.preventDefault();
-      var todo = {
-        title: $userSelectedTitle.val().trim(),
-        rating: $userSelectedRating.val().trim(),
-        image: $userSelectedImage.val().trim(),
+      var watchList = {
+        title: $userSelectedTitle,
+        rating: $userSelectedRating,
+        image: $userSelectedImage
       };
   
-      $.post("/api/movie", todo, getTodos);
-      $newItemInput.val("");
+      $.post("/api/movie", watchList);
+      
     
   });
 
@@ -83,12 +83,12 @@ $(document).ready(function () {
             var resultDiv = $("<div class='card mx-auto' style='width:175px'>");
 
             var resultBody = $("<div class='card-body'>");
-            var resultImage = $("<img class='card-img-top'>");
+            var resultImage = $("<img class=' imagecard-img-top'>");
               resultImage.attr("src", image);
 
             var resultBody = $("<div class='card-body'>");
-            var titleDiv = $("<h3 class='card-title text-center'</h3>").text(title);
-            var ratingDiv = $("<p class='card-text text-center'</p>").text(rating);
+            var titleDiv = $("<h3 class='title card-title text-center'</h3>").text(title);
+            var ratingDiv = $("<p class='rating card-text text-center'</p>").text(rating);
             var addButton = $("<button id='addButton' type='button' class='btn btn-secondary btn-lg btn-block'>Add to List</button>");
 
             resultDiv.append(resultImage, titleDiv, resultBody, ratingDiv, addButton)
