@@ -19,7 +19,7 @@ $(document).ready(function () {
         var cardDeckDiv = $("<div class='card-deck'>");
         var resultDiv = $("<div class='card mx-auto' style='width:175px'>");
 
-        var resultImage = $("<img class='card-img-top'>");
+        var resultImage = $("<img class='card-img-top'>"); 
           resultImage.attr("src", image);
 
         var resultBody = $("<div class='card-body'>");
@@ -58,7 +58,7 @@ $(document).ready(function () {
             var divContainer = $("#resultsContainer");
 
 
-            var resultDiv = $("<div class='card mx-auto' style='width:175px'>");
+            var resultDiv = $("<div class='card' style='width:175px'>");
 
             var resultBody = $("<div class='card-body'>");
             var resultImage = $("<img class='card-img-top'>");
