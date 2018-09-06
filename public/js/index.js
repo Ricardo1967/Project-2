@@ -23,9 +23,9 @@ $(document).ready(function () {
           resultImage.attr("src", image);
 
         var resultBody = $("<div class='card-body'>");
-        var titleDiv = $("<h3 class='card-title text-center'</h3>").text(title);
+        var titleDiv = $("<h3 class='title card-title text-center'</h3>").text(title);
 
-        var ratingDiv = $("<p class='card-text text-center'</p>").text(rating);
+        var ratingDiv = $("<p class='rating card-text text-center'</p>").text(rating);
         var addButton = $("<button id='addButton' type='button' class='btn btn-secondary btn-lg btn-block'>Add to List</button>");
 
         cardDeckDiv.append(resultDiv);
@@ -33,6 +33,28 @@ $(document).ready(function () {
         featuredContainer.prepend(resultDiv);
       }
     }
+  });
+
+ 
+
+  //addButton push to DB
+  $(document).on("click", "#addButton", function(){
+    console.log("Hello");
+    var $userSelectedTitle = $(this).parent('.card').find('.title').text();
+    var $userSelectedRating = $(this).parent('.card').find('.rating').text();
+    var $userSelectedImage = $(this).parent('.card').find('image').text();
+    
+    
+      event.preventDefault();
+      var watchList = {
+        title: $userSelectedTitle,
+        rating: $userSelectedRating,
+        image: $userSelectedImage
+      };
+  
+      $.post("/api/movie", watchList);
+      
+    
   });
 
   //search results from search bar on click
@@ -61,12 +83,12 @@ $(document).ready(function () {
             var resultDiv = $("<div class='card' style='width:275px'>");
 
             var resultBody = $("<div class='card-body'>");
-            var resultImage = $("<img class='card-img-top'>");
+            var resultImage = $("<img class=' imagecard-img-top'>");
               resultImage.attr("src", image);
 
             var resultBody = $("<div class='card-body'>");
-            var titleDiv = $("<h3 class='card-title text-center'</h3>").text(title);
-            var ratingDiv = $("<p class='card-text text-center'</p>").text(rating);
+            var titleDiv = $("<h3 class='title card-title text-center'</h3>").text(title);
+            var ratingDiv = $("<p class='rating card-text text-center'</p>").text(rating);
             var addButton = $("<button id='addButton' type='button' class='btn btn-secondary btn-lg btn-block'>Add to List</button>");
 
             resultDiv.append(resultImage, titleDiv, resultBody, ratingDiv, addButton)
