@@ -58,11 +58,13 @@ module.exports = function (app) {
     });
   });
 
-  //'featured' section 
-  app.get("/api/featured", function (req, res) {
+
+
+  //obtaining data for 'featured movies'
+  app.get("/api/featured/movies", function (req, res) {
     var options = {
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/trending/all/day',
+      url: 'https://api.themoviedb.org/3/trending/movie/day',
       qs:
         { api_key: 'aa0f636f0795b94933b7d8c1b188b57e' },
       body: '{}'
@@ -77,6 +79,28 @@ module.exports = function (app) {
       res.json(response);
     });
   });
-  //END of featured section
+  //END of featured movies section
+
+
+  //obtaining data for 'featured TV'
+  app.get("/api/featured/tv", function (req, res) {
+    var options = {
+      method: 'GET',
+      url: 'https://api.themoviedb.org/3/trending/tv/day',
+      qs:
+        { api_key: 'aa0f636f0795b94933b7d8c1b188b57e' },
+      body: '{}'
+    };
+
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
+      console.log("getting data");
+      response = JSON.parse(response.body);
+      var result = response.results;
+      console.log(response);
+      res.json(response);
+    });
+  });
+  //END of featured TV section
 
 };
