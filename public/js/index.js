@@ -35,6 +35,25 @@ $(document).ready(function () {
     }
   });
 
+ 
+
+  //addButton push to DB
+  $("#addButton").on('click', function(){
+    console.log("Hello");
+    var movieSelect = $(this).find(".card");
+    
+    
+      event.preventDefault();
+      var todo = {
+        text: $newItemInput.val().trim(),
+        complete: false
+      };
+  
+      $.post("/api/todos", todo, getTodos);
+      $newItemInput.val("");
+    
+  });
+
   //search results from search bar on click
   $("#searchForMovie").on('click', function () {
     $("#resultsContainer").empty();
