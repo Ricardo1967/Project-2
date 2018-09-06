@@ -56,8 +56,6 @@
   }
 }
 
-
-
 /* LOGIN PAGE */
 html {
   height: 100%;
@@ -95,12 +93,12 @@ body, html {
 /* Button */
 .btn {
   display: inline-block;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-weight: 600;
-  font-size: 17px;
+  font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  padding: 5px 14px 10px;
+  padding: 5px 13px 5px 13px;
   color: #000000;
   text-align: center;
   cursor: pointer;
@@ -114,7 +112,7 @@ body, html {
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 0px;
-  padding: 3px;
+  padding: 3px 0;
 }
 
 #loginButton{
@@ -122,8 +120,9 @@ body, html {
   font-size: 10px;
   background-color: #e50914;
   border-color: #e50914;
+  font-family: 'Oswald', sans-serif;
   color: white;
-  padding: 2px 2px;
+  padding: 0px 6px;
 }
 
 .btn:hover {
@@ -146,8 +145,8 @@ body, html {
   border-radius: 5px; /* 5px rounded corners */
 }
 
-.card-img-top{
-  padding-top: 10px;
+.card-img-top {
+  margin-top: 10px;
   border: solid white 1px;
   margin-bottom: 5px;
 }
@@ -226,26 +225,6 @@ body, html {
   z-index: 3;
 }
 
-.grid-overlay::before,
-.grid-overlay::after {
-  background-color: rgba(255, 255, 255, 0.1);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  height: 100%;
-  width: 1px;
-}
-
-.grid-overlay::before {
-  content: "";
-  left: 25%;
-}
-
-.grid-overlay::after {
-  content: "";
-  right: 25%;
-}
-
 /* logo bar  */
 .img-responsive {
 width: 80px;
@@ -265,7 +244,6 @@ width: 80px;
 }
 
 /* NEW */
-
 body,
 html {
   width: 100%;
@@ -328,6 +306,10 @@ section {
 
 .section-heading {
   margin-top: 0;
+  font-family: 'Oswald', sans-serif;
+  font-size: 33px;
+  font-weight: 300;
+  letter-spacing: 2px;
 }
 
 ::-moz-selection {
@@ -361,15 +343,19 @@ img::-moz-selection {
   transition: all 0.2s;
 }
 
+.navbar-toggler-icon:hover {
+  color: red;
+}
+
 #mainNav .navbar-brand {
   width: 240px;
 }
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link,
 #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
-  font-size: .9rem;
+  font-size: 16px;
   font-weight: 500;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   color: silver;
 }
@@ -446,7 +432,6 @@ header.masthead {
 }
 
 .masthead {
-  height: 700px;
   background-image: url("/images/hero-bg-Small-dark.png")
 }
 
@@ -489,10 +474,6 @@ header.masthead p {
 
 .service-box {
   max-width: 400px;
-}
-
-.text-primary {
-  color: #F05F40 !important;
 }
 
 footer {

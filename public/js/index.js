@@ -29,7 +29,7 @@ $(document).ready(function () {
         var addButton = $("<button id='addButton' type='button' class='btn btn-secondary btn-lg btn-block'>Add to List</button>");
 
         cardDeckDiv.append(resultDiv);
-        resultDiv.append(resultBody, resultImage, titleDiv, ratingDiv, addButton)
+        resultDiv.append(resultBody, resultImage, resultBody, titleDiv, ratingDiv, addButton)
         featuredContainer.prepend(resultDiv);
       }
     }
@@ -58,7 +58,7 @@ $(document).ready(function () {
             var divContainer = $("#resultsContainer");
 
 
-            var resultDiv = $("<div class='card' style='width:175px'>");
+            var resultDiv = $("<div class='card' style='width:275px'>");
 
             var resultBody = $("<div class='card-body'>");
             var resultImage = $("<img class='card-img-top'>");
