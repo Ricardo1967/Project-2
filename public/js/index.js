@@ -100,6 +100,7 @@ $(document).ready(function () {
 
   //search results from search bar on click
   $("#searchForMovie").on('click', function () {
+    $("#searchResults").show();
     $("#resultsContainer").empty();
     $("#featuredContainer").empty();
       event.preventDefault();

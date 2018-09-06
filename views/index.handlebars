@@ -1,7 +1,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="/images/watchindexWhite.png" class=navbar-brand></a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="/images/watchindexWhite.png" class="navbar-brand"></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
             aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -9,16 +9,16 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#about">Login</a>
+                    <a class="nav-link js-scroll-trigger" href="#featuredTVContainer">Television</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#featuredContainer">Featured Television</a>
+                    <a class="nav-link js-scroll-trigger" href="#featuredMovieContainer">Movies</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#featuredContainer">Featured Movies</a>
+                    <a class="nav-link js-scroll-trigger" href="#watchlistContainer">Watchlist</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#watchlistContainer">My Watchlist</a>
+                <li class="nav-item"></li>
+                <button id="loginButton" class="btn btn-rounded btn-sm my-0" type="submit">Login</button>
                 </li>
             </ul>
         </div>
@@ -26,9 +26,7 @@
 </nav>
 
 <header class="masthead text-center text-white d-flex">
-   <!-- <div class="grid-overlay">
-        <div></div>
-    </div>-->
+
     <div class="container my-auto">
         <div class="row">
             <div class="col-lg-10 mx-auto">
@@ -45,7 +43,8 @@
                         <div class="row">
                             <div class="md-form mx-auto">
                                 <form class="form-inline md-form mr-auto mb-4">
-                                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="searchContent">
+                                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"
+                                        id="searchContent">
                                     <button id="searchForMovie" class="btn aqua-gradient btn-rounded btn-sm my-0" type="submit">Search</button>
                                 </form>
                             </div>
@@ -117,23 +116,14 @@
 </section>
 
 <!-- Footer -->
-<footer class="page-footer">
-        <div class="row">
-            <div class="col-2 mx-auto">
-                <div id="footerCards" class="card mx-auto">
-                    <img class="card-img-top img-responsive mx-auto" src="https://avatars2.githubusercontent.com/u/6886782?s=400&u=e0ff3db7d4cc6db6623621b9e9f104e37cba8978&v=4" alt="Fernanda Rojas" href="#">
-                    <div class="card-body text-center">
-                        <h4 class="card-title">Fernanda Rojas</h4>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-2 mx-auto">
-                <div id="footerCards" class="card mx-auto">
-                    <img class="card-img-top img-responsive mx-auto" src="https://avatars0.githubusercontent.com/u/37424956?s=460&v=4" alt="Liam Sweeney" href="#">
-                    <div class="card-body text-center">
-                        <h4 class="card-title">Liam Sweeney</h4>
-                    </div>
+<footer class="footer-copyright text-center">
+    <div class="row">
+        {{!-- <div class="col-2 mx-auto">
+            <div id="footerCards" class="card mx-auto">
+                <img class="card-img-top img-responsive mx-auto" src="https://avatars2.githubusercontent.com/u/6886782?s=400&u=e0ff3db7d4cc6db6623621b9e9f104e37cba8978&v=4"
+                    alt="Fernanda Rojas" href="#">
+                <div class="card-body text-center">
+                    <h4 class="card-title">Fernanda Rojas</h4>
                 </div>
             </div>
             <div class="col-2 mx-auto">
@@ -146,22 +136,34 @@
             </div> 
         </div>
 
-        {{!-- <div class="row">
-            <div class="col-6">
-                <div class="copyright text-center">
-                    <span>© Copyright</span>
+        <div class="col-2 mx-auto">
+            <div id="footerCards" class="card mx-auto">
+                <img class="card-img-top img-responsive mx-auto" src="https://avatars0.githubusercontent.com/u/37424956?s=460&v=4"
+                    alt="Liam Sweeney" href="#">
+                <div class="card-body text-center">
+                    <h4 class="card-title">Liam Sweeney</h4>
                 </div>
             </div>
-        </div> --}}
-           
+        </div>
+        <div class="col-2 mx-auto">
+            <div id="footerCards" class="card mx-auto">
+                <img class="card-img-top img-responsive mx-auto" src="https://avatars3.githubusercontent.com/u/36551151?s=460&v=4"
+                    alt="Ricardo Montero" href="#">
+                <div class="card-body text-center">
+                    <h4 class="card-title">Ricardo Montero</h4>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+    <div class="row">
+        <div class="col-12">
+            <div class="mx-auto">
+                © 2018 Copyright: Created by Fernanda Rojas, Rick Montero and Liam
+                Sweeney
+            </div>
+        </div>
     </div>
 </footer>
 
-<!-- Plugin JavaScript -->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-<script src="vendor/scrollreveal/scrollreveal.min.js"></script>
-<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
 <!-- Java Script -->
-<script src="js/creative.js"></script>
 <script src="js/index.js"></script>
