@@ -143,6 +143,7 @@ body, html {
 
 .card { 
   max-width: 500px;
+  background-image: url("/images/cardBackground.png");
   background-color: #141414; 
   border: solid #2e2d35 1px;
   padding: 0px 30px 20px 30px;
@@ -178,10 +179,6 @@ body, html {
   word-wrap: normal;
 }
 
-.results {
-  background-image: url("/images/sectiongradient.png");
-}
-
 #inputEmail { 
   line-height: 2;
   margin-bottom: 10px;
@@ -213,44 +210,6 @@ body, html {
   width: 30%;
   height: 8%;
   padding: 2px;
-}
-
-/*  grid overlay  */
-.grid-overlay {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  bottom: 0;
-  right: 0;
-  max-width: 1200px;
-  width: 89%;
-  height: 100%;
-  opacity: .75;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  -webkit-transform: translate3d(-50%, 0, 0);
-  -ms-transform: translate3d(-50%, 0, 0);
-  transform: translate3d(-50%, 0, 0);
-  z-index: 3;
-}
-
-/* logo bar  */
-.img-responsive {
-width: 80px;
-}
-
-.flex-container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: #1a1a1c;
-}
-
-/* to center flex-items */
-.flex-item {
-   margin: auto;
 }
 
 /* NEW */
@@ -290,14 +249,6 @@ h6 {
   font-family: "Nunito Sans", sans-serif;
 }
 
-.bg-primary {
-  background-color: #e50914 !important;
-}
-
-.bg-dark {
-  background-color: #212529 !important;
-}
-
 .text-faded {
   color: rgba(255, 255, 255, 0.7);
   font-size: 26px;
@@ -307,7 +258,7 @@ h6 {
 }
 
 section {
-  padding: 8rem 0;
+  padding: 2rem 0;
 }
 
 .section-heading {
@@ -483,7 +434,7 @@ header.masthead p {
 }
 
 .footer-copyright {
-  background-color: #e50914;
+  background-color: #2e2d35;
   align-content: center;
   color: white;
   font-family: 'Oswald', sans-serif;
@@ -491,7 +442,7 @@ header.masthead p {
   font-size: 16px;
   letter-spacing: 1px;
   Padding-top: 45px;
-  height: 100px;
+  height: 300px;
   margin-left: auto;
   margin-right: auto;
 }
