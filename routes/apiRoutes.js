@@ -1,6 +1,9 @@
 var request = require("request");
 var db = require("../models");
 
+  sequelize = db.sequelize;
+  Sequelize = db.Sequelize;
+
 //the movie database API key info - test using movie avengers search ALL (movie and tv)
 
 module.exports = function (app) {
@@ -25,40 +28,14 @@ module.exports = function (app) {
 
     request(options, function (error, response, body) {
       if (error) throw new Error(error);
-
       console.log("getting data");
       response = JSON.parse(response.body);
       var result = response.results;
-
-        // var responseObj = {
-        //   //title: result.title,
-        //   rating: result.vote_average,
-        //   image: "https://image.tmdb.org/t/p/w500" + result.poster_path
-        // }
-      //console.log(responseObj);
       console.log(response);
       res.json(response);
     });
   });
   //END of user Search 
-
-
-  app.post("/api/movie", function(req, res) {
-    console.log(req.body);
-    // create takes an argument of an object describing the item we want to
-    // insert into our table. In this case we just we pass in an object with a text
-    // and complete property (req.body)
-    db.WatchList.create({
-      title: req.body.title,
-      rating: req.body.rating,
-      image: req.body.image
-    }).then(function(dbWatchList) {
-      // We have access to the new todo as an argument inside of the callback function
-      res.json(dbWatchList);
-    });
-  });
-
-
 
   //obtaining data for 'featured movies'
   app.get("/api/featured/movies", function (req, res) {
@@ -102,5 +79,40 @@ module.exports = function (app) {
     });
   });
   //END of featured TV section
+
+  // adding content data into WatchList_db when user clicks on #addButton
+  app.post("/api/add", function(req, res) {
+    console.log(req.body);
+    // create takes an argument of an object describing the item we want to
+    // insert into our table. In this case we just we pass in an object with a text
+    // and complete property (req.body)
+    db.WatchList.create({
+      contentID: req.body.contentID,
+      title: req.body.title,
+      rating: req.body.rating,
+      image: req.body.image
+    }).then(function(dbWatchList) {
+      // We have access to the new todo as an argument inside of the callback function
+      res.json(dbWatchList);
+    });
+  });
+  // END OF adding content data into WatchList_db
+
+
+  // adding searchqueries into SearchList_db 
+  // app.post("/api/add/searchquery", function(req, res) {
+  //   console.log(req.body);
+  //   // create takes an argument of an object describing the item we want to
+  //   // insert into our table. In this case we just we pass in an object with a text
+  //   // and complete property (req.body)
+  //   db.SearchList.create({
+  //     searchQuery: req.body.searchQuery
+  //   }).then(function(dbSearchList) {
+  //     // We have access to the new todo as an argument inside of the callback function
+  //     res.json(dbSearchlist);
+  //   });
+  // });
+  // END OF adding searchqueries into SearchList_db 
+
 
 };

@@ -12,7 +12,7 @@ $(document).ready(function () {
 
       for (var i = 0; i < 6; i++) { 
 
-        //var contentID = data.results[i].id;
+        var contentID = data.results[i].id;
         var title = data.results[i].original_title;
         var rating = data.results[i].vote_average;
         var image = "https://image.tmdb.org/t/p/w500" + data.results[i].poster_path;
@@ -26,6 +26,8 @@ $(document).ready(function () {
           resultImage.attr("src", image);
 
         var resultBody = $("<div class='card-body'>");
+          resultBody.attr('id', contentID);
+
         var titleDiv = $("<h3 class='title card-title text-center'</h3>").text(title);
 
         var ratingDiv = $("<p class='rating card-text text-center'</p>").text(rating);
@@ -38,7 +40,6 @@ $(document).ready(function () {
     }
   });
   //END of featured movies section//
- 
 
   //featured TV section//
   $.ajax({ 
@@ -51,52 +52,32 @@ $(document).ready(function () {
       for (var i = 0; i < 6; i++) { 
 
         var contentID = data.results[i].id;
-        var title = data.results[i].original_title;
+        var title = data.results[i].name;
         var rating = data.results[i].vote_average;
         var image = "https://image.tmdb.org/t/p/w500" + data.results[i].poster_path;
 
-        var featuredContainer = $("#featuredTVContainer");
+        console.log(title);
 
+        var featuredContainer = $("#featuredTVContainer");
         var cardDeckDiv = $("<div class='card-deck'>");
-          
         var resultDiv = $("<div class='card mx-auto' style='width:175px'>");
-          
         var resultImage = $("<img class='image card-img-top'>");
-          resultImage.attr("src", image);
+          resultImage.attr('src', image);
 
         var resultBody = $("<div class='card-body contentID'>");
-         //resultBody.attr('id', contentID);
+          resultBody.attr('id', contentID);
         var titleDiv = $("<h3 class='title card-title text-center'</h3>").text(title);
 
         var ratingDiv = $("<p class='rating card-text text-center'</p>").text(rating);
         var addButton = $("<button id='addButton' type='button' class='btn btn-secondary btn-lg btn-block'>Add to List</button>");
 
         cardDeckDiv.append(resultDiv);
-        resultDiv.append(resultBody, resultImage, titleDiv, ratingDiv, addButton)
+        resultDiv.append(resultBody, resultImage, titleDiv, ratingDiv, addButton);
         featuredContainer.prepend(resultDiv);
       }
     }
   });
   //END of featured movies section//
-
-  //addButton push to DB
-  $(document).on("click", "#addButton", function(){
-    console.log("Hello");
-   // var $userSelectedID = $(this).parent('.card').find('.contentID').attr();
-    var $userSelectedTitle = $(this).parent('.card').find('.title').text();
-    var $userSelectedRating = $(this).parent('.card').find('.rating').text();
-    var $userSelectedImage = $(this).parent('.card').find('image').text();
-    
-    
-      event.preventDefault();
-      var watchList = {
-       // id: $userSelectedID,
-        title: $userSelectedTitle,
-        rating: $userSelectedRating,
-        image: $userSelectedImage
-      };
-      $.post("/api/movie", watchList);
-  });
 
   //search results from search bar on click
   $("#searchForMovie").on('click', function () {
@@ -114,21 +95,22 @@ $(document).ready(function () {
         success: function (data) {
           console.log(data);
           //for loop to show up to 4 results //
-          for (var i = 0; i < 4; i++) { 
+          for (var i = 0; i < 6; i++) { 
+            var contentID = data.results[i].id;
             var title = data.results[i].original_title;
             var rating = data.results[i].vote_average;
             var image = "https://image.tmdb.org/t/p/w500" + data.results[i].poster_path;
 
             var divContainer = $("#resultsContainer");
+            var resultDiv = $("<div class='card mx-auto'>");
 
-
-            var resultDiv = $("<div class='card mx-auto' style='width:175px'>");
-
-            var resultBody = $("<div class='card-body'>");
+            var resultBody = $("<div class='card-body' style='width:175px'>");
             var resultImage = $("<img class=' imagecard-img-top'>");
               resultImage.attr("src", image);
 
             var resultBody = $("<div class='card-body'>");
+              resultBody.attr('id', contentID);
+
             var titleDiv = $("<h3 class='title card-title text-center'</h3>").text(title);
             var ratingDiv = $("<p class='rating card-text text-center'</p>").text(rating);
             var addButton = $("<button id='addButton' type='button' class='btn btn-secondary btn-lg btn-block'>Add to List</button>");
@@ -138,5 +120,38 @@ $(document).ready(function () {
           }
         }
       });
-    })
+
+
+    //   event.preventDefault(); 
+    //   console.log(searchInput);
+    //   var searchList = { 
+    //     searchQuery: searchInput
+    //   };
+
+    //   console.log(searchList);
+    //   $.post("/api/add/searchquery", searchList);
+    });
+
+  //addButton push to WatchList_DB
+  $(document).on("click", "#addButton", function(){
+    console.log("Hello");
+    var $userSelectedID = $(this).parent('.card').find('.contentID').attr('id');
+    var $userSelectedTitle = $(this).parent('.card').find('.title').text();
+    var $userSelectedRating = $(this).parent('.card').find('.rating').text();
+    var $userSelectedImage = $(this).parent('.card').find('.image').attr('src');
+    
+    console.log($userSelectedID);
+
+      event.preventDefault();
+      var watchList = {
+        contentID: $userSelectedID,
+        title: $userSelectedTitle,
+        rating: $userSelectedRating,
+        image: $userSelectedImage
+      };
+      $.post("/api/add", watchList);
+      //END of addButton push to WatchList_DB
+
+  });
+
 });
