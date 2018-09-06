@@ -1,4 +1,5 @@
 var request = require("request");
+var db = require("../models");
 
 //the movie database API key info - test using movie avengers search ALL (movie and tv)
 
