@@ -105,7 +105,7 @@ $(document).ready(function () {
             var resultDiv = $("<div class='card mx-auto'>");
 
             var resultBody = $("<div class='card-body' style='width:175px'>");
-            var resultImage = $("<img class=' imagecard-img-top'>");
+            var resultImage = $("<img class='image imagecard-img-top mx-auto'>");
               resultImage.attr("src", image);
 
             var resultBody = $("<div class='card-body'>");
