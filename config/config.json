@@ -1,19 +1,12 @@
 {
   "development": {
     "username": "root",
-    "password": "Fer331248",
-    "database": "exampledb",
+    "password": "Ricardo01",
+    "database": "watchIndex_DB",
     "host": "localhost",
     "dialect": "mysql"
   },
-  "test": {
-    "username": "root",
-    "password": "Fer331248",
-    "database": "testdb",
-    "host": "localhost",
-    "dialect": "mysql",
-    "logging": false
-  },
+  
   "production": {
     "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
