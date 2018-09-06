@@ -40,16 +40,19 @@ $(document).ready(function () {
   //addButton push to DB
   $("#addButton").on('click', function(){
     console.log("Hello");
-    var movieSelect = $(this).find(".card");
+    var $userSelectedTitle = $(this).find('.card').find('card-title').val();
+    var $userSelectedRating = $(this).find('.card').find('card-text').val();
+    var $userSelectedImage = $(this).find('.card').find('card-img-top').val();
     
     
       event.preventDefault();
       var todo = {
-        text: $newItemInput.val().trim(),
-        complete: false
+        title: $userSelectedTitle.val().trim(),
+        rating: $userSelectedRating.val().trim(),
+        image: $userSelectedImage.val().trim(),
       };
   
-      $.post("/api/todos", todo, getTodos);
+      $.post("/api/movie", todo, getTodos);
       $newItemInput.val("");
     
   });
