@@ -35,6 +35,28 @@ $(document).ready(function () {
     }
   });
 
+ 
+
+  //addButton push to DB
+  $("#addButton").on('click', function(){
+    console.log("Hello");
+    var $userSelectedTitle = $(this).find('.card').find('card-title').val();
+    var $userSelectedRating = $(this).find('.card').find('card-text').val();
+    var $userSelectedImage = $(this).find('.card').find('card-img-top').val();
+    
+    
+      event.preventDefault();
+      var todo = {
+        title: $userSelectedTitle.val().trim(),
+        rating: $userSelectedRating.val().trim(),
+        image: $userSelectedImage.val().trim(),
+      };
+  
+      $.post("/api/movie", todo, getTodos);
+      $newItemInput.val("");
+    
+  });
+
   //search results from search bar on click
   $("#searchForMovie").on('click', function () {
     $("#resultsContainer").empty();

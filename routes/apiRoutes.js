@@ -41,6 +41,22 @@ module.exports = function (app) {
   });
   //END of user Search 
 
+
+  app.post("/api/movie", function(req, res) {
+    console.log(req.body);
+    // create takes an argument of an object describing the item we want to
+    // insert into our table. In this case we just we pass in an object with a text
+    // and complete property (req.body)
+    db.WatchList.create({
+      title: req.body.title,
+      rating: req.body.rating,
+      image: req.body.image
+    }).then(function(dbWatchList) {
+      // We have access to the new todo as an argument inside of the callback function
+      res.json(dbWatchList);
+    });
+  });
+
   //'featured' section 
   app.get("/api/featured", function (req, res) {
     var options = {
