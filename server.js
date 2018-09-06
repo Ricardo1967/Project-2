@@ -6,7 +6,7 @@ var db = require("./models");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-var mdb = require('moviedb')('aa0f636f0795b94933b7d8c1b188b57e');
+//var mdb = require('moviedb')('aa0f636f0795b94933b7d8c1b188b57e');
 
 
 // Middleware
